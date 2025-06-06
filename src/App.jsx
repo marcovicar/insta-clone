@@ -8,6 +8,7 @@ import {
 import {Helmet} from "react-helmet";
 import {Toaster} from "react-hot-toast";
 import Home from "./pages/home/index.jsx";
+import Navbar from './components/Navbar.jsx';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Toaster position="top-right" reverseOrder={false} />
 
         {/* TODO: Create sidebar*/}
+        <Navbar/>
 
         <div className={""}>
           <Routes>
