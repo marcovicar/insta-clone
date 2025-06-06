@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <>
     <header>
-        <nav className="bg-blue-500 p-4 text-white">
+        <nav className="bg-blue-500 p-4 text-white fixed top-0 left-0 w-full bg-blue-500 p-4 text-white shadow-md">
         <div className="container mx-auto flex justify-between items-center">
             <h1 className="text-xl font-bold">My Navbar</h1>
             <ul className="flex space-x-4">
@@ -15,7 +15,6 @@ const Navbar = () => {
         </div>
         </nav>
     </header>
-        
     </>
   );
 };
