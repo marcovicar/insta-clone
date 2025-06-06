@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "tailwind:init": "tailwindcss init -p"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.4",
@@ -22,7 +23,9 @@
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^19.1.0",
     "react-helmet": "^6.1.0",
+    "react-hot-toast": "^2.5.2",
     "react-redux": "^9.2.0",
+    "react-router-dom": "^6.30.1",
     "react-select": "^5.10.1",
     "react-tag-input": "^6.10.6",
     "redux": "^5.0.1",
