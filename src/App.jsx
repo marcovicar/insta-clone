@@ -30,7 +30,7 @@ function App() {
           </div>
           <div
             className={
-              `relative flex flex-col flex-1 mx-auto w-0 mb-2 pb-2 transition-transform duration-300 max-w-screen-fullHD md:px-6 z-0`
+              `relative flex flex-col flex-1 mx-auto w-0 mb-2 pb-2 transition-transform duration-300 max-w-screen-fullHD md:pl-4 z-0`
             }
           >
             <Routes> {/* Old Switch */}

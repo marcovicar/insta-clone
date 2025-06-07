@@ -3,11 +3,13 @@ import React, { useEffect } from "react";
 /**
  *
  * @param children
+ * @param customStyle
  * @returns {JSX.Element}
  * @constructor
  */
 export default function MainSectionWrapper({
   children,
+  customStyle = "",
 }) {
   function handleMainSectionHeight() {
     const bodyHeight = document.body.clientHeight;
@@ -46,9 +48,9 @@ export default function MainSectionWrapper({
   return (
     <main
       id={"main-wrapper"}
-      className="flex-1 relative overflow-y-visible focus:outline-none h-full pt-28"
+      className={`flex-1 relative focus:outline-none h-full pt-28 ${customStyle ? customStyle : "overflow-y-visible"}`}
     >
-      <div className="h-full">
+      <div className={`h-full`}>
         <div
           id={"main-section-body"}
           className={`md:px-0 sm:pt-0 pt-2 px-6`}
