@@ -48,7 +48,7 @@ export default function MainSectionWrapper({
   return (
     <main
       id={"main-wrapper"}
-      className={`flex-1 relative focus:outline-none h-full pt-28 ${customStyle ? customStyle : "overflow-y-visible"}`}
+      className={`flex-1 relative focus:outline-none pt-12 h-full ${customStyle ? customStyle : "overflow-y-visible"}`}
     >
       <div className={`h-full`}>
         <div
