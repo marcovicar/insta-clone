@@ -1,12 +1,19 @@
 import React from 'react';
 import MainSectionWrapper from "../../components/MainWrapper/MainWrapper.jsx";
+import SuggestionsToFollow from "../../components/SuggestionsToFollow/SuggestionsToFollow.js";
 
 export default function Home() {
 
   return (
     <MainSectionWrapper>
-      <div className={"flex justify-center align-middle"}>
-        <h1 className="font-insta text-2xl">Home</h1>
+      <div className={"grid grid-cols-[1fr_300px] gap-4 px-4"}>
+        <div
+          id={"feed"}
+          className={""}
+        >
+
+        </div>
+        <SuggestionsToFollow />
       </div>
     </MainSectionWrapper>
   )
