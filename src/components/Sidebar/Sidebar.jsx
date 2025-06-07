@@ -11,6 +11,7 @@ import {
 } from '@heroicons/react/24/solid'
 import {
   HeartIcon,
+  ChatBubbleOvalLeftEllipsisIcon,
   UserPlusIcon
 } from '@heroicons/react/24/outline'
 import {classNames} from "../../helpers/globals/index.js";
@@ -59,6 +60,7 @@ const navigation = [
   // },
   { name: 'Pesquisa', href: '#', icon: MagnifyingGlassIcon, current: false },
   { name: 'Explorar', href: '#', icon: CompassIcon, current: false },
+  { name: 'Mensagens', href: '#', icon: ChatBubbleOvalLeftEllipsisIcon, current: false },
   { name: 'Notificações', href: '#', icon: HeartIcon, current: false },
   { name: 'Create User', href: '/create-user', icon: UserPlusIcon, current: false },
 ];
@@ -101,8 +103,19 @@ export default function Sidebar() {
                         'group flex gap-x-3 rounded-md p-2 text-sm/6 text-[16px]'
                       )}
                     >
-                      <item.icon aria-hidden="true" className="size-6 shrink-0" />
+                      <div className={"relative"}>
+                        <item.icon aria-hidden="true" className="size-6 shrink-0" />
+
+                        {/* Badge apenas se for o item "Mensagens" */}
+                        {item.name === 'Mensagens' && (
+                          <span className="absolute -top-2 -right-3 flex h-5 min-w-[20px] items-center justify-center rounded-full bg-red-500 px-1.5 text-xs font-bold text-white leading-none shadow">
+                            9+
+                          </span>
+                        )}
+                      </div>
+
                       {item.name}
+
                     </Link>
                   ) : (
                     <Disclosure as="div">
