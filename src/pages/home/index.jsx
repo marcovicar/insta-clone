@@ -1,5 +1,5 @@
 import React from 'react';
-import MainSectionWrapper from "../../components/MainWrapper/index.jsx";
+import MainSectionWrapper from "../../components/MainWrapper/MainWrapper.jsx";
 
 export default function Home() {
 

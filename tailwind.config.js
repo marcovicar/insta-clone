@@ -1,18 +1,14 @@
+import scrollbar from 'tailwind-scrollbar'
+
 /** @type {import('tailwindcss').Config} */
-const module = require("vite");
-module.exports = {
+export default {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}", // ajusta se estiver usando outra estrutura
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        primary: '#1e40af',
-        secondary: '#f59e0b',
-      },
-    },
+    extend: {},
   },
   plugins: [
-    require('tailwind-scrollbar'),
+    scrollbar,
   ],
 }

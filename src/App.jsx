@@ -1,4 +1,3 @@
-import './App.css';
 import {
   BrowserRouter as Router,
   Route,
@@ -8,7 +7,7 @@ import {
 import {Helmet} from "react-helmet";
 import {Toaster} from "react-hot-toast";
 import Home from "./pages/home/index.jsx";
-import Navbar from './components/Navbar.jsx';
+import Navbar from './components/Navbar/Navbar.jsx';
 import CreateUserPage from "./pages/createUser/index.jsx";
 
 function App() {
