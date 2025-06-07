@@ -14,7 +14,7 @@ import Sidebar from "./components/Sidebar/Sidebar.jsx";
 function App() {
 
   return (
-    <Router history={history}>
+    <Router>
       <div>
         <Helmet>
           <title>Instagram clone</title>

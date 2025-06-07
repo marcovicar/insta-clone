@@ -10,9 +10,11 @@ import {
   MagnifyingGlassIcon,
 } from '@heroicons/react/24/solid'
 import {
-  HeartIcon
+  HeartIcon,
+  UserPlusIcon
 } from '@heroicons/react/24/outline'
 import {classNames} from "../../helpers/globals/index.js";
+import {Link} from "react-router-dom";
 
 const CompassIcon = (props) => (
   <svg
@@ -33,7 +35,7 @@ const CompassIcon = (props) => (
 );
 
 const navigation = [
-  { name: 'Página inicial', href: '#', icon: HomeIcon, current: true },
+  { name: 'Página inicial', href: '/', icon: HomeIcon, current: true },
   // {
   //   name: 'Teams',
   //   icon: UsersIcon,
@@ -58,6 +60,7 @@ const navigation = [
   { name: 'Pesquisa', href: '#', icon: MagnifyingGlassIcon, current: false },
   { name: 'Explorar', href: '#', icon: CompassIcon, current: false },
   { name: 'Notificações', href: '#', icon: HeartIcon, current: false },
+  { name: 'Create User', href: '/create-user', icon: UserPlusIcon, current: false },
 ]
 
 export default function Sidebar() {
@@ -91,16 +94,16 @@ export default function Sidebar() {
               {navigation.map((item) => (
                 <li key={item.name}>
                   {!item.children ? (
-                    <a
-                      href={item.href}
+                    <Link
+                      to={item.href}
                       className={classNames(
                         item.current ? 'bg-gray-50 !font-bold' : 'hover:bg-gray-50',
-                        'group flex gap-x-3 rounded-md p-2 text-sm/6  text-[16px]',
+                        'group flex gap-x-3 rounded-md p-2 text-sm/6 text-[16px]'
                       )}
                     >
-                      <item.icon aria-hidden="true" className="size-6 shrink-0"/>
+                      <item.icon aria-hidden="true" className="size-6 shrink-0" />
                       {item.name}
-                    </a>
+                    </Link>
                   ) : (
                     <Disclosure as="div">
                       <DisclosureButton

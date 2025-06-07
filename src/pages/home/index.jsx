@@ -11,7 +11,7 @@ export default function Home() {
           id={"feed"}
           className={""}
         >
-
+          Feed
         </div>
         <SuggestionsToFollow />
       </div>
