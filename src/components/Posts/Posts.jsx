@@ -116,7 +116,7 @@ export default function Posts() {
           <FaceSmileIcon className="w-4 h-4 hover:text-gray-300" />
         </div>
       </div>
-      <hr className={"mt-4 h-[0.3px] bg-gray-400 border-none"}/>
+      <hr className={"mt-4 h-[0.3px] bg-gray-300 border-none"}/>
     </div>
   );
 }
