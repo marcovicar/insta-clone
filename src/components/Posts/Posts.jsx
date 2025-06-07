@@ -86,7 +86,7 @@ export default function Posts() {
             <ChatBubbleOvalLeftIcon  className={"w-7 h-7 scale-x-[-1]"}/>
           </div>
           <div className={"cursor-pointer hover:text-gray-300"}>
-            <PaperAirplaneIcon className="w-7 h-7" />
+            <PaperAirplaneIcon className="w-7 h-7 rotate-[-53deg]" />
           </div>
         </div>
         <div className={"pt-2"}>
