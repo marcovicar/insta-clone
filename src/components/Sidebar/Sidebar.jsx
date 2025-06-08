@@ -68,7 +68,7 @@ const navigation = [
 export default function Sidebar() {
   return (
     <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 h-full">
-      <div className="flex h-16 shrink-0 items-center py-[46px]">
+      <div className="flex shrink-0 items-center pt-[50px] pb-[15px]">
         {/*<div className="text-4xl font-instaLogo">*/}
         {/*  Instagram*/}
         {/*</div>*/}
@@ -99,12 +99,12 @@ export default function Sidebar() {
                     <Link
                       to={item.href}
                       className={classNames(
-                        item.current ? 'bg-gray-50 !font-bold' : 'hover:bg-gray-50',
-                        'group flex gap-x-3 rounded-md p-2 text-sm/6 text-[16px]'
+                        item.current ? '!font-bold' : '',
+                        'hover:bg-gray-100 group flex gap-x-3 rounded-md p-2 text-sm/6 font-insta text-[16px]'
                       )}
                     >
                       <div className={"relative"}>
-                        <item.icon aria-hidden="true" className="size-6 shrink-0" />
+                        <item.icon aria-hidden="true" className="size-7 shrink-0" />
 
                         {/* Badge apenas se for o item "Mensagens" */}
                         {item.name === 'Mensagens' && (
@@ -112,10 +112,13 @@ export default function Sidebar() {
                             9+
                           </span>
                         )}
+
+                        {item.name === 'Notificações' && (
+                          <span className="absolute -top-0 -right-0 flex h-2 w-2 items-center justify-center rounded-full bg-red-500 text-xs font-bold text-white leading-none shadow">
+                          </span>
+                        )}
                       </div>
-
                       {item.name}
-
                     </Link>
                   ) : (
                     <Disclosure as="div">
