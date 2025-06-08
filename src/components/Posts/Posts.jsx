@@ -5,6 +5,7 @@ import {
   HeartIcon,
   PaperAirplaneIcon
 } from "@heroicons/react/24/outline";
+import {shortText} from "../../helpers/globals/index.js";
 
 const likes = [
   "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
@@ -37,22 +38,25 @@ function PostLikes() {
 }
 
 
-export default function Posts() {
+export default function Posts({
+  post
+}) {
   return (
     <div
+      key={post?.id}
       id={"posts-container"}
       className={"flex flex-col justify-center"}
     >
       <div className={"flex justify-between pb-4"}>
         <div className={"flex gap-2"}>
           <img
-            src={"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"}
-            alt={""}
+            src={post?.user?.avatar?.url}
+            alt={post?.user?.avatar?.alt || ""}
             className="h-8 w-8 rounded-full object-cover"
           />
           <div className={"flex items-center"}>
           <span className="flex gap-1.5 text-sm font-semibold leading-tight">
-            {"marcovicar"}
+            {post?.user?.username}
             <span className={"text-gray-400"}>{"• 3 h"}</span>
           </span>
             {/*<p className="text-xs text-gray-400 truncate w-[170px]">*/}
@@ -60,7 +64,10 @@ export default function Posts() {
             {/*</p>*/}
           </div>
         </div>
-        <div className={"flex items-center cursor-pointer"}>
+        <div
+          title={"Mais opções"}
+          className={"flex items-center cursor-pointer"}
+        >
           <MoreHorizIcon fontSize="medium" />
         </div>
       </div>
@@ -69,8 +76,8 @@ export default function Posts() {
         className={"flex justify-center"}
       >
         <img
-          src={"https://images.unsplash.com/photo-1748968218568-a5eac621e65c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
-          alt={""}
+          src={post?.postImage?.url}
+          alt={post?.postImage?.url || ""}
           className={"w-full rounded "}
         />
       </div>
@@ -79,13 +86,22 @@ export default function Posts() {
           id={"posts-actions"}
           className={"flex gap-2 pt-4"}
         >
-          <div className={"cursor-pointer hover:text-gray-300"}>
+          <div
+            title={"Curtir"}
+            className={"cursor-pointer hover:text-gray-300"}
+          >
             <HeartIcon className="w-7 h-7" />
           </div>
-          <div className={"cursor-pointer hover:text-gray-300"}>
+          <div
+            title={"Comentar"}
+            className={"cursor-pointer hover:text-gray-300"}
+          >
             <ChatBubbleOvalLeftIcon  className={"w-7 h-7 scale-x-[-1]"}/>
           </div>
-          <div className={"cursor-pointer hover:text-gray-300"}>
+          <div
+            title={"Compartilhar"}
+            className={"cursor-pointer hover:text-gray-300"}
+          >
             <PaperAirplaneIcon className="w-7 h-7 rotate-[-53deg]" />
           </div>
         </div>
@@ -97,12 +113,12 @@ export default function Posts() {
         <span
           className={"text-sm font-semibold leading-tight"}
         >
-          marcovicar
+          {post?.user?.username}
         </span>
         <span
           className={"text-sm leading-tight"}
         >
-          Em algum lugar por aí 🌴
+          {shortText(post?.description, 116)}
         </span>
       </div>
       <div className={"flex flex-col gap-y-1.5 pt-1.5"}>
@@ -116,7 +132,7 @@ export default function Posts() {
           <FaceSmileIcon className="w-4 h-4 hover:text-gray-300" />
         </div>
       </div>
-      <hr className={"mt-4 h-[0.3px] bg-gray-300 border-none"}/>
+      <hr className={"mt-6 h-[0.3px] bg-gray-300 border-none"}/>
     </div>
   );
 }
