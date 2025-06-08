@@ -48,7 +48,7 @@ export default function Posts({
       className={"flex flex-col justify-center"}
     >
       <div className={"flex justify-between pb-4"}>
-        <div className={"flex gap-2"}>
+        <div className={"flex gap-2 cursor-pointer"}>
           <img
             src={post?.user?.avatar?.url}
             alt={post?.user?.avatar?.alt || ""}
