@@ -48,17 +48,17 @@ export default function Posts({
       className={"flex flex-col justify-center"}
     >
       <div className={"flex justify-between pb-4"}>
-        <div className={"flex gap-2 cursor-pointer"}>
+        <div className={"flex gap-2"}>
           <img
             src={post?.user?.avatar?.url}
             alt={post?.user?.avatar?.alt || ""}
-            className="h-8 w-8 rounded-full object-cover"
+            className="h-8 w-8 rounded-full object-cover cursor-pointer"
           />
           <div className={"flex items-center"}>
-          <span className="flex gap-1.5 text-sm font-semibold leading-tight">
-            {post?.user?.username}
-            <span className={"text-gray-400"}>{"• 3 h"}</span>
-          </span>
+            <span className="flex gap-1.5 text-sm font-semibold leading-tight cursor-pointer">
+              {post?.user?.username}
+              <span className={"text-gray-400"}>{"• 3 h"}</span>
+            </span>
             {/*<p className="text-xs text-gray-400 truncate w-[170px]">*/}
             {/*  {""}*/}
             {/*</p>*/}
